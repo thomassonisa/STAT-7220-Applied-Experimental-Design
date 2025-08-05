@@ -1,0 +1,509 @@
+---
+title: "An Introduction to R & Python Programming for Data Science"
+format: beamer
+editor: visual
+author: "Dr. Austin Brown"
+institute: "Kennesaw State University"
+---
+
+## Why Learn R & Python?
+
+-   You may be asking yourself, out of all of the possible analysis softwares which exist, why should I spend time learning R and Python?
+
+\vskip 0.10 in
+
+-   Great question!
+
+\vskip 0.10 in
+
+-   Both are useful tools and worthwhile to learn for several reasons:
+    1.  They're free!
+    2.  Because they're open source, thousands of people have contributed packages and functions at a pace that proprietary softwares can't compete with
+    3.  Both are very flexible and robust meaning there's a lot you can do with it (including creating these very slides!)
+    4.  Both are basically standards in industry
+
+## So What are R & Python?
+
+-   They are command-line, object-oriented programming languages commonly used for data analysis, data science and statistics.
+
+\vskip 0.10 in
+
+-   \textbf{Command-line} means that we have to give them commands in order for us to get it to do something. In R:
+
+```{r}
+#| echo: true
+#| include: true
+## I want to add 2 and 2 ##
+2 + 2
+```
+
+## So What are R & Python?
+
+-   In Python:
+
+```{python}
+#| echo: true
+#| include: true
+## In Python? Exactly the same! ##
+2 + 2
+```
+
+## So What are R & Python?
+
+-   \textbf{Object-oriented} means that we can save individual pieces of output as some name that we can use later. This is a super handy feature, especially when you have complicated scripts!
+
+```{r}
+#| echo: true
+## Using R: ##
+a <- 2 + 2
+a
+```
+
+## So What are R & Python?
+
+```{python}
+#| echo: true
+## Using Python: ##
+a = 2 + 2
+print(a)
+```
+
+## What can R & Python do?
+
+-   What can R and Python do? Well, for the purpose of data analytics, I have yet to find a limit!
+
+\vskip 0.25 in
+
+-   In this class, we will be learning how to use both R and Python as a tool in the data science workflow.
+
+\vskip 0.25 in
+
+-   What is the data science workflow??
+
+## What can R & Python do?
+
+![From R for Data Science 2nd Edition](Data%20Science%20Workflow.png)
+
+## Importing Data
+
+-   Since a major reason we use both programming languages is for the analysis of data, we need to know how to import data from various sources and file formats into RStudio.
+
+\vskip 0.15 in
+
+-   There are a variety of ways of importing data into RStudio using either programming language, but they largely depend on the type of datafile that you are importing (e.g., Excel file, CSV file, text file, SAS dataset, SPSS dataset, etc.).
+
+\vskip 0.15 in
+
+-   While there are lots of different files which can be imported into RStudio (Google is an excellent resource for searching for code for how to do something), we're going to focus on two main types: Excel and CSV
+
+## Importing Data
+
+-   Let's try importing a CSV file using R and then Python. This file is part of the famous Framingham Heart Study.
+
+\vskip 0.15 in
+
+-   First, download the "HEART" file from D2L. Save the file to your project folder.
+
+\vskip 0.15 in
+
+-   Now to read in this CSV file using, R we will use the \texttt{read\_csv} function, which is part of the \texttt{readr} package.
+    -   To import using Python, we will use the \texttt{pandas} package and a function also called \texttt{read\_csv}.
+
+## Importing Data
+
+-   Okay, but before we get into reading in the HEART CSV file, what in the world is a package and function??
+
+\vskip 0.15 in
+
+-   We can think of packages like toolboxes in a mechanic's shop. Each toolbox contains different tools used for specific purposes.
+
+\vskip 0.15 in
+
+-   So to access a particular tool, we have to go to the right toolbox.
+    -   A toolbox is like a package
+    -   The tools within the toolbox are like functions within a package
+
+\vskip 0.15 in
+
+-   Thus, \texttt{read\_csv} is a tool (function) within the \texttt{readr} and \texttt{pandas} toolbox (package).
+
+## Importing Data
+
+-   A function can also be thought of like a mathematical function: we provide some input and some specific output is returned. Now, while RStudio comes with several packages pre-installed for both R and Python, almost all others in existence have to be installed from the web, including \texttt{readr} and \texttt{pandas}.
+
+\vskip 0.15 in
+
+-   So to install an R package, we have to use a particular function called \texttt{install.packages}, which does almost exactly what it sounds like it does!
+
+## Importing Data
+
+-   We can use the following syntax:
+
+```{r,echo=TRUE,eval=F}
+## Installing the readr package ##
+install.packages('readr')
+```
+
+## Importing Data
+
+-   Now, we can also think of functions like mathematical functions; we have to supply the function with special inputs called \textit{\underline{arguments}} in order to get the desired output.
+    -   For instance, in the \texttt{install.packages} function, we had to specify to the function which package we wanted to install.
+
+\vskip 0.15 in
+
+-   How do we know what arguments to specify for a given function?
+
+\vskip 0.15 in
+
+-   There are lots of different ways, but one way we can do so is by using the \texttt{?} operator.
+
+```{r,echo=T,eval=F}
+## What are the arguments for read_csv? ##
+?readr::read.csv
+```
+
+## Importing Data
+
+-   As we can see, there are a lot of arguments we can specify. However, we don't need to specify most of them.
+
+\vskip 0.15 in
+
+-   All of the arguments which have an "$\texttt{=}$" after them, like "\texttt{col\_names = TRUE}", will retain that argument unless you explicitly change it. \texttt{col\_names = TRUE} means that the columns of the CSV file have names. If they don't, then we would change it to, \texttt{col\_names = FALSE} and the column names will have generic names, (\texttt{V1, V2, ... , VN}).
+
+\vskip 0.15 in
+
+-   So for us, because we know that the CSV has names for the columns, our code for importing will be:
+
+```{r,echo=T}
+library(readr)
+heart <- read_csv("HEART.csv")
+```
+
+## Importing Data
+
+-   Now that we've learned how to import a CSV file into R, let's learn how to import an XLSX file into R.
+    -   Download the esoph Excel file and upload it to RStudio Cloud. This dataset contains information about esophageal cancer patients from a study in France.
+
+\vskip 0.15 in
+
+-   The tool we use to do this is a function called \texttt{read\_xlsx} which is part of the \texttt{readxl} package.
+
+\vskip 0.15 in
+
+-   After installing \texttt{readxl}, we can read in the file by:
+
+```{r,echo=T}
+library(readxl)
+## Importing the 'esoph' dataset ##
+esoph <- read_xlsx("esoph.xlsx")
+```
+
+## Importing Data
+
+-   So we've imported some datasets into R...how do we know that they imported correctly?
+
+\vskip 0.15 in
+
+-   There are two general approaches I'd recommend. One is visual and one uses the \texttt{dplyr::glimpse} function.
+
+\vskip 0.15 in
+
+-   In the upper right hand corner of the RStudio window, we see our heart dataframe we uploaded a bit ago. If we click on it, a new window will open up which shows us the structure of the dataframe, the values of the variables, and the variable names.
+
+## Importing Data
+
+-   This visual method is effective for relatively small dataframes (\< 10,000 rows), but can bog down if you have a large dataframe.
+
+\vskip 0.15 in
+
+-   To get around this, we can just look at a few rows of the dataframe using the \texttt{dplyr::glimpse} function, which prints the first few rows of a dataframe to your console.
+    -   \texttt{dplyr::glimpse(heart)}
+
+```{r,echo=T,eval=F}
+## First, Install dplyr ##
+install.packages('dplyr')
+library(dplyr)
+heart |>
+  glimpse()
+```
+
+```{r,echo=F}
+library(dplyr)
+```
+
+## Importing Data
+
+-   As we visually inspect the first few rows of the HEART dataframe, we can see that the "Sex" variable appears to be \textit{\underline{categorical}} whereas the "Weight" variable appears to be \textit{\underline{quantitative}}.
+
+\vskip 0.15 in
+
+-   A \textbf{quantitative} variable is something which can be measured with a number, like dollars, time, height, weight, blood pressure, etc. R refers to these as "numeric" variables.
+
+\vskip 0.15 in
+
+-   A \textbf{categorical} variable is just the opposite. It is something which cannot be quantified and is more of a quality. These are things like sex, country of origin, hair color, cause of death etc. R refers to these as "character" variables.
+
+## Importing Data
+
+-   You may be asking yourself, "why does this matter?" It's important for two primary reasons:
+
+\vskip 0.15 in
+
+-   First, the type of variable we are working with dictates to us which graphical and statistical methods exist for us to analyze that variable. What works for a categorical variable almost certainly won't work for a quantitative variable.
+
+\vskip 0.15 in
+
+-   Second, in terms of R programming, we can look at the variable "Sex" and "Height" in the heart dataframe and conclude that these are categorical and quantitative variables, respectively. But when we read the heart dataframe into R using \texttt{readr::read\_csv}, we didn't have to tell R what types of variables each column was; it by default scans each column and makes a best guess as to what type of variable the column contains.
+    -   So how can we know that R properly recognized the variables in the heart dataframe?
+
+## Importing Data
+
+-   One straightforward way to do this is by using the \texttt{dplyr::glimpse} function.
+
+\vskip 0.15 in
+
+-   This function basically does what it sounds like: it gives us a brief glimpse of a dataframe. Let's check it out!
+
+## Importing Data
+
+\tiny
+
+```{r,echo=T}
+heart |>
+  glimpse()
+```
+
+\normalsize
+
+## Importing Data
+
+-   Sex, for example, we can imagine is a categorical variable as its values, male and female, are characteristics and not numbers.
+    -   We can tell R read it in as a categorical variable because it is coded as character (notice the \texttt{<chr>} to the right of the Sex variable name).
+
+\vskip 0.15 in
+
+-   Height, on the other hand, we can imagine is a quantitative variable as its values are numbers!
+    -   We can tell R read it in as a quantitative variable because it is coded as double (notice the \texttt{<dbl>} to the right of the Height variable name).
+
+## Importing Data
+
+-   Let's say I wanted to find the average or mean Age at Death from the Heart dataframe. How would I go about doing that?
+
+\vskip 0.15 in
+
+-   First, I need to know how to isolate that single variable by itself.
+
+\vskip 0.15 in
+
+-   To do this, we make use of the dollar-sign operator after the name of our dataframe.
+    -   You can think of the dollar-sign operator like a door to your home. The name of the dataframe is the house itself, the dollar-sign is the door, and the variable name is the person we want to talk to inside of the house.
+    -   So the structure is: House\$Person
+
+\vskip 0.15 in
+
+-   In your console, enter the following command, and see what happens: \texttt{heart\$AgeAtDeath}
+
+## Importing Data
+
+-   One of the cool aspects of RStudio is that when you press the dollar sign after a dataframe, whether that's in your script window or your console window, is that it automatically pops up a list of all the variables contained within that dataset that you can navigate to with your arrow keys.
+
+\vskip 0.15 in
+
+-   Okay, so now that we know how to isolate \texttt{AgeAtDeath}, we find its sample mean by using the \texttt{mean} function
+
+```{r,echo=T}
+mean(heart$AgeAtDeath)
+```
+
+## Importing Data
+
+-   When we ran that code, the result came up as NA which stands for "not-applicable." Why is this? Isn't \texttt{AgeAtDeath} a quantitative variable?
+
+\vskip 0.15 in
+
+-   One trick I often use when I get unexpected output is to look at the documentation for the function I'm trying to use with the help of the \texttt{?} operator.
+
+\vskip 0.15 in
+
+-   Notice the third argument in the \texttt{mean} function, \texttt{na.rm = FALSE}.
+
+\vskip 0.15 in
+
+-   If we scroll down a bit and read what this bit of code does, it basically says that it is a logical (i.e., true or false) argument asking if you want it to remove the NA values before calculating the mean or not. By default, it won't since it is set to FALSE already.
+
+## Importing Data
+
+-   So if we change this argument to "TRUE" we should get the same 70.54 mean that we saw using the summary function.
+
+```{r,echo=T}
+mean(heart$AgeAtDeath,na.rm=TRUE)
+```
+
+## Tidying Data: Selecting Columns
+
+-   Now, let's say I have a large dataframe with lots of columns of information, as you might see in your own careers.
+
+\vskip 0.15 in
+
+-   But, for whatever analysis I'm wanting to do, I don't need all of the columns, just a few.
+
+\vskip 0.15 in
+
+-   In such a case, it might be useful to subset the dataframe and select only the columns we need.
+
+\vskip 0.15 in
+
+-   How do we go about doing this? Like many things in R, there are a few different ways to yield the same result, but I'm going to show you what I consider the most straightforward method, which uses the \texttt{dplyr} package.
+
+## Tidying Data: Selecting Columns
+
+-   Let's say using the Heart dataframe, I want to create a new dataframe which only contains the last four columns: \texttt{Chol\_Status}, \texttt{BP\_Status}, \texttt{Weight\_Status}, and \texttt{Smoking\_Status}.
+
+\vskip 0.15 in
+
+-   To do this, we will use the \texttt{select} function from within the \texttt{dplyr} package.
+
+```{r,echo=T}
+heart_status <- heart |>
+  select(Chol_Status,BP_Status,
+         Weight_Status,Smoking_Status)
+```
+
+## Tidying Data: Filtering Rows
+
+-   To check and make sure the subsetting worked properly, we would use the same visualizing and summarizing approaches we used for importing data.
+
+\vskip 0.15 in
+
+-   In the last problem, we subset the Heart dataframe by columns. What if we wanted to subset by values in the rows?
+
+\vskip 0.15 in
+
+-   For example, let's say in the new heart_status dataframe we just created, we want to create a new dataframe where we only have those participants whose \texttt{Weight\_Status} is "Overweight."
+
+\vskip 0.15 in
+
+-   Again, there are a few different approaches, but I would recommend using the \texttt{filter} function within the \texttt{dplyr} package.
+
+## Tidying Data: Filtering Rows
+
+```{r,echo=T}
+heart_status_ow <- heart_status |>
+  filter(Weight_Status == 'Overweight')
+```
+
+## Tidying Data: Filtering Rows
+
+-   To check and make sure this worked, I would recommend utilizing a new function called \texttt{table}. Basically what it does is counts up frequency of unique responses for a particular variable.
+
+\vskip 0.10 in
+
+-   So in the heart_status dataframe, if we use the \texttt{table} function, we can see that there are 3550 participants who were categorized as overweight.
+
+## Tidying Data: Filtering Rows
+
+-   If we look at the number of observations in the heart_status_ow dataframe, we can see we indeed have 3550 observations, meaning that \texttt{dplyr} did what it was supposed to do.
+
+```{r,echo=T}
+heart_status |>
+  select(Weight_Status) |>
+  table()
+```
+
+## Tidy Data: What is it?
+
+-   Once we have imported data, our next job is often to "tidy" it. Tidy data refers to data structure or how information is stored.
+
+\vskip 0.15 in
+
+-   A tidy dataframe has the following characteristics:
+    1.  Each variable is a column; each column is a variable.
+    2.  Each observation is a row; each row is an observation.
+    3.  Each value has is a cell; each cell is a single value.
+
+## Tidy Data: What is it?
+
+![From R for Data Science 2nd Edition](Tidy%20Data%20Structure.png)
+
+## Tidy Data: What is it?
+
+-   Why should we care about having our data in tidy format? There are two key reasons:
+
+\vskip 0.15 in
+
+-   First, consistency. It's much easier to work with datasets if we know what format they're in.
+
+\vskip 0.15 in
+
+-   Second, this is generally the structure most R functions want the data to be in.
+    -   \texttt{dplyr}, \texttt{ggplot2}, and all of the other \texttt{tidyverse} packages are designed specifically to work with tidy data.
+
+## Tidy Data: From Wide to Long
+
+-   While it is impossible to cover all possible ways we have to tidy up untidy data (and trust me, there are countless ways for data not to be tidy), it is useful to discuss one very common tidy technique: going from wide to long (long is a different word for tidy).
+
+\vskip 0.15 in
+
+-   But first, what is wide data?
+
+\vskip 0.15 in
+
+-   Wide data is very commonly found in longitudinal types of datasets
+    -   For example, measuring resting heart rate of participants in a new exercise program at 0 weeks, 4 weeks, 8 weeks, and so on.
+
+\vskip 0.15 in
+
+-   Let's consider the \texttt{tidyr::relig\_income} dataset.
+
+## Tidy Data: From Wide to Long
+
+\tiny
+
+```{r,echo=T}
+library(tidyr)
+relig_income |>
+  head()
+```
+
+\normalsize
+
+## Tidy Data: From Wide to Long
+
+-   These data represent the number of people adhering to a particular religion with a specific annual income.
+
+\vskip 0.15 in
+
+-   Why are they not considered tidy?
+
+\vskip 0.15 in
+
+-   It may be easiest to explain by comparing the wide format to the long/tidy format.
+
+\vskip 0.15 in
+
+-   We can pivot or transpose our data by using the \texttt{tidyr::pivot\_longer} function:
+
+## Tidy Data: From Wide to Long
+
+```{r,echo=T}
+library(tidyr)
+data('relig_income')
+long_relig_income <- relig_income |>
+  pivot_longer(!religion,names_to="income",
+               values_to="count")
+long_relig_income |>
+  head()
+```
+
+## Tidy Data: From Wide to Long
+
+-   The "tidyness" of the data depends on what our observational unit is.
+
+\vskip 0.15 in
+
+-   Here, our observational unit is a specific religion with a specific income range.
+
+\vskip 0.15 in
+
+-   The primary takeaway from this is to know how the data need to be organized in order for them to be compatable for a given function.
+    -   We will see this play out in our section on data visualization with \texttt{ggplot}
