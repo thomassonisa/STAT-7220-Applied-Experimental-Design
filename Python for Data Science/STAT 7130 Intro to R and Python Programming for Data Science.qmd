@@ -80,7 +80,7 @@ print(a)
 
 -   What is the data science workflow??
 
-## What can R & Python do?
+## What Can Python do?
 
 ![From R for Data Science 2nd Edition](Data%20Science%20Workflow.png)
 
