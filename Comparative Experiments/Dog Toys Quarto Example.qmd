@@ -1,0 +1,37 @@
+---
+title: "Rubber Dog Balls Experiment Analysis"
+author: "Austin Brown"
+format: pdf
+editor: visual
+execute:
+  echo: true
+  include: true
+  warning: false
+  message: false
+---
+
+## Question 1: Specify the outcome and independent variables. What lurking variables might be present?
+
+Outcome = PSI when ball rips; IV = Formulation. Could be a lurking variable if different operators are used to test the balls.
+
+## Question 3: Perform the Appropriate Exploratory Analysis
+
+```{r}
+library(tidyverse)
+library(readxl)
+
+## Read in Rubber Dog Ball Data ##
+
+dogs <- read_excel("Comparative Experiments/Dog Toys.xlsx")
+
+## Examine Data Structure ##
+
+dogs |>
+  glimpse()
+
+#install.packages('broom')
+```
+
+$$
+\bar{x} = \frac{1}{n}\sum_{i=1}^nx_i
+$$
