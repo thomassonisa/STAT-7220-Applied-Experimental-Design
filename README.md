@@ -6,6 +6,21 @@ In this course, we will be using **Google Colab** for coding and analysis. Googl
 
 Below, you will find instructions on how to set up and work on your own copy of the course materials using Google Colab.
 
+## 🛠 Getting Started in Google Colab
+
+1. **Fork this repository** into your own GitHub account.  
+2. **Clone your fork** into Colab (run this in a new Colab cell):
+
+```python
+# Replace YOUR_USERNAME with your GitHub username
+your_username = "YOUR_USERNAME"
+repo_name = "STAT-7220-Applied-Experimental-Design"
+
+!git clone https://github.com/{your_username}/{repo_name}.git
+%cd {repo_name}
+```
+Note, please check out this video for a step-by-step guide on how to fork and clone the repository: [How to Fork and Clone a GitHub Repository for Google Colab].
+
 ## 📚 Course Materials Index
 
 ### Week 0 - Basics of Python for Data Science
