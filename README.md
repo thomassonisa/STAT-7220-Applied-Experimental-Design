@@ -10,7 +10,7 @@ Below, you will find instructions on how to set up and work on your own copy of 
 
 1. **Create a Google Account**: If you don't already have one, create a Google account to access Google Colab.
 2. **Access Google Colab**: Go to [Google Colab](https://colab.research.google.com/) and sign in with your Google account.
-3. **Follow the Student Guide**: Refer to the [Student Guide]
+3. **Follow the Student Guide**: Refer to the [Student Guide](https://github.com/abrown9008/STAT-7220-Applied-Experimental-Design/blob/main/Python%20for%20Data%20Science/Getting%20Started%20with%20GitHub%20and%20Google%20Colab%20for%20Assignment%20Submissions.ipynb) for detailed instructions on how to copy the repository and work on assignments in Google Colab.
 
 ## 📚 Course Materials Index
 
