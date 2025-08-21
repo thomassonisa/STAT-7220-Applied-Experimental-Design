@@ -32,3 +32,28 @@ Below, you will find instructions on how to set up and work on your own copy of 
 
 ## Week 5 - Latin Square Design (LSD)
 - [Lecture Notes](https://github.com/abrown9008/STAT-7220-Applied-Experimental-Design/blob/main/Random%20Block%20Design%20and%20Latin%20Squares/Intro-to-Latin-Square-Design.ipynb)
+
+## Week 6 - Midterm Exam
+- [Midterm](https://github.com/abrown9008/STAT-7220-Applied-Experimental-Design/blob/main/Assignments/Midterm-Exam/Midterm-Exam.ipynb)
+
+## Week 7 & 8 - Factorial Designs
+- [Lecture Notes](https://github.com/abrown9008/STAT-7220-Applied-Experimental-Design/blob/main/Factorial%20Designs/Intro-to-Factorial-Designs.ipynb)
+- [Example](https://github.com/abrown9008/STAT-7220-Applied-Experimental-Design/blob/main/Factorial%20Designs/Factorial-Design-Analysis-Example.ipynb)
+
+## Week 9 - $2^2$ Factorial Designs
+- [Lecture Notes](https://github.com/abrown9008/STAT-7220-Applied-Experimental-Design/blob/main/Fractional%20Factorial%20Design/2-2-Factorial-Designs.ipynb)
+
+## Week 10 - $2^3$ Factorial Designs
+- [Lecture Notes]
+
+## Week 11 - $2^k$ Factorial Designs
+- [Lecture Notes]
+
+## Week 12 & 13 - Two-Level Fractional Factorial Designs
+- [Lecture Notes]
+
+## Week 14 - Experiments with Random Effects
+- [Lecture Notes]
+
+## Week 15 - Nested and Split-Plot Designs
+- [Lecture Notes]
