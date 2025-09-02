@@ -14,10 +14,10 @@ Below, you will find instructions on how to set up and work on your own copy of 
 
 ## 📚 Course Materials Index
 
-### Week 0 - Basics of Python for Data Science
+## Week 0 - Basics of Python for Data Science
 - [Lecture Notes](https://github.com/abrown9008/STAT-7220-Applied-Experimental-Design/blob/main/Python%20for%20Data%20Science/Introduction%20to%20Python%20for%20Data%20Science.ipynb)
 
-### Week 1 - Introduction to Experimental Design
+## Week 1 - Introduction to Experimental Design
 - [Lecture Notes](https://github.com/abrown9008/STAT-7220-Applied-Experimental-Design/blob/main/Introduction%20to%20Experimental%20Design/Intro%20to%20Experimental%20Design.ipynb)
 
 ## Week 2 - Completely Randomized Design (CRD)
