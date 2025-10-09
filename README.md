@@ -44,7 +44,7 @@ Below, you will find instructions on how to set up and work on your own copy of 
 - [Lecture Notes](https://github.com/abrown9008/STAT-7220-Applied-Experimental-Design/blob/main/Fractional%20Factorial%20Design/2-2-Factorial-Designs.ipynb)
 
 ## Week 10 - $2^3$ Factorial Designs
-- [Lecture Notes]
+- [Lecture Notes](https://github.com/abrown9008/STAT-7220-Applied-Experimental-Design/blob/main/Fractional%20Factorial%20Design/2-3-Factorial-Designs.ipynb)
 
 ## Week 11 - $2^k$ Factorial Designs
 - [Lecture Notes]
