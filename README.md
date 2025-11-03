@@ -48,7 +48,7 @@ Below, you will find instructions on how to set up and work on your own copy of 
 
 ## Week 11 & 12 - Two-Level Fractional Factorial Designs
 - [Lecture Notes](https://github.com/abrown9008/STAT-7220-Applied-Experimental-Design/blob/main/Fractional%20Factorial%20Design/One-Half-Fractional-Factorial-Designs.ipynb)
-- [Example]
+- [Example](https://github.com/abrown9008/STAT-7220-Applied-Experimental-Design/blob/main/Fractional%20Factorial%20Design/One-Half-Fractional-Factorial-Design-Example.ipynb)
 
 ## Week 13 - Experiments with Random Effects
 - [Lecture Notes]
