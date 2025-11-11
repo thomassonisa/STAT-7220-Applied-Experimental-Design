@@ -51,7 +51,7 @@ Below, you will find instructions on how to set up and work on your own copy of 
 - [Example](https://github.com/abrown9008/STAT-7220-Applied-Experimental-Design/blob/main/Fractional%20Factorial%20Design/One-Half-Fractional-Factorial-Design-Example.ipynb)
 
 ## Week 13 - Experiments with Random Effects
-- [Lecture Notes]
+- [Lecture Notes](https://github.com/abrown9008/STAT-7220-Applied-Experimental-Design/blob/main/Experiments%20with%20Random%20Factors/Experiments%20with%20Random%20and%20Mixed%20Factors.ipynb)
 
 ## Week 14 & 15 - Nested and Split-Plot Designs
 - [Lecture Notes]
