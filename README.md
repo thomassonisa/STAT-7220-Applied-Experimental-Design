@@ -54,4 +54,4 @@ Below, you will find instructions on how to set up and work on your own copy of 
 - [Lecture Notes](https://github.com/abrown9008/STAT-7220-Applied-Experimental-Design/blob/main/Experiments%20with%20Random%20Factors/Experiments%20with%20Random%20and%20Mixed%20Factors.ipynb)
 
 ## Week 14 & 15 - Nested and Split-Plot Designs
-- [Lecture Notes]
+- [Nested Designs Lecture Notes](https://github.com/abrown9008/STAT-7220-Applied-Experimental-Design/blob/main/Nested%20and%20Split%20Plot%20Designs/Nested-Designs.ipynb)
